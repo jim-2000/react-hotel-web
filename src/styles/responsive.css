@@ -1,0 +1,48 @@
+.img-container{
+    @apply relative;
+    width: 100%;
+    height: 100%;
+    
+}
+.img-container img{
+    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@media (max-width: 640px) {
+    .img-container{
+        width: 100%;
+        height: 100%;
+    }
+    .ourGellary{
+    width: 100.333px !important;
+    margin-right: 10px !important;
+}
+
+}
+    
+.slick-prev {
+    left: 3% !important;
+    z-index: 1;
+    /* background-color: #9B51E0 !important; */
+ 
+  }
+  .slick-next {
+    right: 3% !important;
+    z-index: 1;
+ 
+}
+
+.slick-prev:before, .slick-next:before {
+    font-size: 25px !important;
+    color: black !important;
+}
+
+.arrow-slider-curstom {
+    font-size: 30px !important;
+    color: black !important;
+}
+  
