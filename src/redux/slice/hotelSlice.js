@@ -11,7 +11,6 @@ export const getHotel = createAsyncThunk(
         const response = await api.ApiGetHotelDetails();
         return response;
     } catch (error) {
-        console.log(error);
         rejectWithValue(error);
     }
 })

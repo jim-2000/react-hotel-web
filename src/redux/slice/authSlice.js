@@ -63,7 +63,6 @@ export const forgotPassword = createAsyncThunk(
 // otpVerify
 export const otpVerify = createAsyncThunk(
     "auth/otpverify",    async ({ form, navigate ,toast}, { rejectWithValue }) => {
-        console.log(form);
         try {
             const response = await api.ApiOtpVerification(form);
             toast.success(response.meassage);
@@ -78,7 +77,6 @@ export const otpVerify = createAsyncThunk(
 // resentOtpVerify
 export const resentOtpVerify = createAsyncThunk(
     "auth/resentOtpVerify",    async ({ form ,toast}, { rejectWithValue }) => {
-        console.log(form);
         try {
             const response = await api.ApiResentOtpVerification(form);
             toast.success("Otp sent again to your email");

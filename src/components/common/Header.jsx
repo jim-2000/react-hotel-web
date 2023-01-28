@@ -73,10 +73,9 @@ const Header = () => {
                     navlinks.map((item, index) => <NavlinkLIS key={index} index={index} item={item} router={router} toggleNav  />)
                 }          
                 {
-                    user && <NavlinkLIS item={{name: 'Login', href: '/login'}} router={router} 
-                    logoutme  />   
+                    user === null ? <NavlinkLIS item={{name: 'Login', href: '/login'}} router={router}/> : <Link  className='my-4 md:my-0 btn btn-primary-circle hover:shadow  btn-animate' to={'/booking'}  >Book NOW</Link> 
                 } 
-                <Link  className='my-4 md:my-0 btn btn-primary-circle hover:shadow  btn-animate' to={'/booking'}  >Book NOW</Link>    
+                   
             </ul>
              {/* social icons  */}
             <div className='hidden  lg:flex'>

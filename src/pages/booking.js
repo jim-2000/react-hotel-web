@@ -3,14 +3,13 @@ import Bookingdetails from '../components/booking/bookingdetails'
 import Bookingfullform from '../components/booking/bookingfullform'
 import Pageloader from '../components/common/loader'
 import { useBooking } from '../context/DataContex'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { getAllRoom } from '../redux/slice/roomSlice'
 const Booking = () => {
   const [error, setError] = useState(false);
-
-    const { booking, setBooking ,resetBookForm} = useBooking()
-
-    const dispatch = useDispatch()
+  const {rooms,bookRoom,Rloading} = useSelector(state => state.room);
+  const { booking, setBooking ,resetBookForm} = useBooking()
+  const dispatch = useDispatch()
  
      useEffect(()=>{
       resetBookForm()
@@ -18,8 +17,8 @@ const Booking = () => {
      },[])
        
    
-     if (error) {
-      return <Pageloader/>
+     if (Rloading) {
+      return <Pageloader isloading={Rloading}/>
      }
   return (
     <div className=''>           

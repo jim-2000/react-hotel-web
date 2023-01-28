@@ -84,7 +84,7 @@ export default function Home() {
     className='container py-5'
     >
       <GridTwoLayout 
-      firstLayout={<AboutHotel text={hotel.description} />}
+      firstLayout={<AboutHotel text={hotel?.description} />}
    
       SecondLayout={
         <AwsomeSlides  />
@@ -111,7 +111,7 @@ export default function Home() {
         {/* <AwsomeSlides /> */}
         <GridTwoLayout 
         css={'grid  md:grid-cols-[60%,40%] grid-cols-1 w-full gap-4 md:gap-4 flex-wrap'}
-      firstLayout={ <AwsomeSlides photos={hotel.photos ?? []} />}
+      firstLayout={ <AwsomeSlides photos={hotel?.photos ?? []} />}
   
       SecondLayout={
         <AboutHotel /> 
@@ -129,7 +129,7 @@ export default function Home() {
     <div className='container py-5'>
     <h1 className='text-center section-title'>Insta <span>Moment</span></h1>
      <div>
-         <SmallImgslides data={hotel.photos ?? []} />
+         <SmallImgslides data={hotel?.photos ?? []} />
      </div>
     </div>
     <div>
@@ -142,22 +142,4 @@ export default function Home() {
 )
 
 }
-
-export async function getStaticProps(ctx) {
-  
  
-  // const res = await fetch(`http://localhost:4000/api/hottle`);
-  // const data = await res.json();
-  // if (!data) {
-  //   return {
-  //     notFound: true,
-  //   }    
-  // }
-  //  console.log("data call>>>>>>>>>>");
-  
-  return {
-    props: {
-      // data,
-    }, // will be passed to the page component as props
-  }
-}

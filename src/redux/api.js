@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const base ='https://hotel-luner.up.railway.app/api/';
-const base = `http://localhost:4000/api/`;
+const base ='https://mern-hotel.onrender.com/api/';
+// const base = `http://localhost:4000/api/`;
 const config = {
     headers: {
       "Access-Control-Allow-Origin": "*",
@@ -17,7 +17,7 @@ API.interceptors.request.use((req) => {
     if (localStorage.getItem("profile")) {
       req.headers.Authorization = `Bearer ${
         JSON.parse(localStorage.getItem("profile"))
-      }`;
+    }`
     }
     return req;
   })

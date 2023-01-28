@@ -42,7 +42,7 @@ const customStyles = {
 
 
 const Bookingfullform = () => {
-  const { booking, setBooking } = useBooking()
+  const { booking, setBooking,resetBookForm } = useBooking()
   const [isOn, toggleIsOn] = useToggle();
   const [error, setError] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -132,41 +132,19 @@ const Bookingfullform = () => {
         </div>
          
      
-      <button className='btn btn-primary  bg-main text-white py-2 px-4 rounded-md w-full '
+      <button className='btn btn-primary  bg-main text-white py-2 px-4 rounded-md w-full mt-3 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:border-slate-600 disabled:border-2'
       disabled={!booking.token}
       onClick={()=>{       
-        if (booking.checkIn && booking.checkOut && booking.name && booking.email && booking.phone &&booking.roomId) {
-          console.log(booking);
+        if (booking.checkIn && booking.checkOut && booking.name && booking.email && booking.phone &&booking.roomId && booking.token) {
           const form = booking;
           dispatch(BookNow({toast,form,navigate}))
+          resetBookForm()
         }else{
-          console.log('Error');       
+          toast.error("Please Fillup this form and pay")          
         }
         
       }}
       >Book Now</button>
-      <div className='w-full md:w-96 relative'>
-            <Modal
-               isOpen={modalIsOpen}
-               onAfterOpen={()=>{}}
-               onRequestClose={()=>setmodalIsOpen(false)}
-               style={customStyles}
-               contentLabel="Example Modal"
-               ariaHideApp={false}
-            >
-              <div>
-              <div className='flex items-end justify-end py-2'>
-              <IoIosClose 
-                    style={{fontSize: '2rem', }}
-                    className='text-red-500 cursor-pointer hover:text-main     transition-all ease-in duration-500'
-                    onClick={ ()=>setmodalIsOpen(!modalIsOpen) }
-                    />
-              </div>
-              <ConfirmModal />
-
-              </div>                 
-          </Modal>
-      </div>
     </div>
     </div>
   )

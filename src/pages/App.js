@@ -30,7 +30,7 @@ function App() {
    const [isLoading, setIsLoading] = useState(true)  
    const dispatch = useDispatch();
   
-   const Isuser = JSON.parse(localStorage.getItem("profile"));
+   const Isuser = JSON.parse(localStorage.getItem("user"));
    setTimeout(() => {
     setIsLoading(false);
    }, 3000);

@@ -11,8 +11,6 @@ import RoomCarousel from '../components/rDetails/roomCarousel';
  
 //
 import { useLocation, useNavigate } from "react-router-dom";
-import { IoIosCalendar } from 'react-icons/io';
-import { DateRange } from 'react-date-range';
 import { useState } from 'react';
 import { format } from 'date-fns';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,6 +18,7 @@ import { useBooking } from '../context/DataContex';
 import { BookNow, SelectRoomById } from '../redux/slice/roomSlice';
 import { toast } from 'react-hot-toast';
 import BookingPayment from '../components/booking/bookingPayment';
+import Pageloader from '../components/common/loader';
  
 
  
@@ -29,7 +28,7 @@ import BookingPayment from '../components/booking/bookingPayment';
 
 const Roomdetails = (props) => {
     // navigation state
-  const {rooms,bookRoom} = useSelector(state => state.room);
+  const {rooms,bookRoom,Rloading} = useSelector(state => state.room);
     const location = useLocation();
     const [state, setState] = useState(location.state.roomData);
     const [isOpen, setIsOpen] = useState(false);
@@ -62,6 +61,9 @@ const Roomdetails = (props) => {
     React.useEffect(()=>{
         dispatch(SelectRoomById(state._id))
     },[])
+    if(Rloading){
+       return <Pageloader isloading={Rloading} /> 
+    }
   return (
     <div className='px-4'>
         <div className='container py-2 flex justify-between items-center'>
@@ -195,19 +197,20 @@ const Roomdetails = (props) => {
                                 <BookingPayment />
                             </div>
                             </div>
-                            <button className=' bg-text btn btn-secondary text-white px-3 py-2 rounded-md w-full mt-3' 
+                            <button className=' bg-text btn btn-secondary text-white px-3 py-2 rounded-md w-full mt-3 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:border-slate-600 disabled:border-2' 
                                 disabled={!booking.token}
                                
                             onClick={()=>{
-                                if (booking.checkIn && booking.checkOut && booking.name && booking.email && booking.phone) {
+                                if (booking.checkIn && booking.checkOut && booking.name && booking.email && booking.phone && booking.token) {
                                     const form = {
                                         ...booking,
                                         roomId:bookRoom._id,
                                      };
-                                     console.log(form);
+                                
                                     dispatch(BookNow({toast,form,navigate}))
+                                    resetBookForm();
                                   }else{
-                                    toast.error("Please Fill in all fields")       
+                                    toast.error("Please Fillup this form and pay")       
                                   }                             
                             }}>Book Now</button>
                             
