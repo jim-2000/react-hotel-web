@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+ 
+# Hotel Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a full-stack project built using Node.js, Express, MongoDB, React, and Flutter for a mobile app.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Built with
+* Node.js - [Backend](https://github.com/jim-2000/node-hotel-backEnd)
+* Express - Web framework for Node.js
+* MongoDB - NoSQL database
+* React - [Frontend](https://hotel-luner.vercel.app/)
+* Flutter - Mobile [app](https://github.com/jim-2000/hotel-app)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Feacher
+## User
+* User authentication (sign up and login)
+* OTP validation __Email__
+* Role base authentication
+* Role base access
+* JWT token validation
+* forget password __Etc__
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Hotel
+* CRUD Hotel (Now it's __singel__ vendor But we can use it ~~multivendor~~)
+* Find Hotel By location
+* Singel Hotel 
+* __Hotel Feacher__
+    * Hotel facilities [ ]
+    * Hotel nearby [ ]
+    * Hotel Faq [sd]
+    * Active -Deactive Hotel
+    * Multiple __Image__
+    * ~~Hotel review's~~
+## Room 
+* Room management (CRUD operations)
+* Get All Room 
+* Singel Room
+* Get Room By Hotel
+* __Room Feacher__
+    * Max geust
+    * Room Feature [ ] {name,description,icon}
+    * Remove Feacher
+    * ~~CHECK Room Avaliblity~~ __(Now I'm working on it)__
+    * Multiple __Image__
+    * Remove __Image__
+    * ADD __Image__
 
-### `npm test`
+## Booking 
+* Booking management (CRUD operations)
+* Pending Booking 
+* Confirm Booking 
+* Send Booking Confirm __Email__
+* __Booking calender__
+* Cencelll Booking 
+* ~~User Cencelll Booking~~ (__Now I'm working on it__)
+* __Stripe__ Payment Getway
+* offline Payment 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Front-end 
+* React
+* react-router-dom
+* Redux-toolkit
+* Tailwindcss
+* MUI useing in __(admin panel)__
+* React toast
+* React react-icons
+* React slick-carousel, swiper
+* React sweetalert2
+* React Framer motion
+* React react-stripe-checkout
+* ...many more
 
-### `npm run build`
+## others
+---
+- __cloudynary__
+- __Nodemailer__
+- __Stripe Checkout__
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Preview
+* [Website 💻](https://hotel-luner.vercel.app/)
+* [Admin 🧑](https://lively-belekoy-b9521b.netlify.app/dashboard/app)  
+* [Mobile 📱](https://github.com/jim-2000/hotel-app) ~~__Still working on it__~~
+- - - -
+email : demo.hotel@luner.com (admin)
+password: demo.hotel@luner.com (admin)
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Authors
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [@hossain al jim](https://www.github.com/jim-2000)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/al-hossain-793a981bb/)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+[![github](https://img.shields.io/badge/github-333?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jim-2000)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
